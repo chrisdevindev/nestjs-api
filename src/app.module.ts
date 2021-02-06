@@ -4,10 +4,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { typeOrmConfig } from './configs/typeorm.config';
 import { UserModule } from './modules/user/user.module';
+import { UserRepository } from './modules/user/user.repository';
+import { UserService } from './modules/user/user.service';
 
 @Module({
   imports: [TypeOrmModule.forRoot(typeOrmConfig), UserModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, UserService, UserRepository],
 })
 export class AppModule {}
