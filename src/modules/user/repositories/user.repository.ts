@@ -1,7 +1,7 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { CreateUserDto } from './dtos/create-user.dto';
-import { UserRole } from './user-roles.enum';
-import { User } from './user.entity';
+import { CreateUserDto } from '../dtos/create-user.dto';
+import { UserRole } from '../enum/user-roles.enum';
+import { User } from '../../../entities/user.entity';
 
 import * as crypto from 'crypto';
 import * as bcrypt from 'bcrypt';
