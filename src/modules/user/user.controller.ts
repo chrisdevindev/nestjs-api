@@ -1,5 +1,5 @@
-import { Body, Controller, Post, ValidationPipe } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Post, UseInterceptors, ValidationPipe } from '@nestjs/common';
+import { ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { ResponseUserDTO } from './dtos/response-user.dto';
 import { UserService } from './user.service';
@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private userService: UserService) {}
 
-  @Post()
+  @Post('createAdminUser')
   async createAdminUser(
     @Body(ValidationPipe) createUserDto: CreateUserDto,
   ): Promise<ResponseUserDTO> {
