@@ -44,7 +44,7 @@ export class UserRepository extends Repository<User> {
     }
   }
 
-  private async checkCredentials(credentialsDto: CredentialsDTO): Promise<User>{
+   async checkCredentials(credentialsDto: CredentialsDTO): Promise<User>{
     const { email, password } = credentialsDto;
     const user = await this.findOne({ email, status: true })
 
